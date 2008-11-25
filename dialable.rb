@@ -1,7 +1,12 @@
+# Copyright (c) 2008 Chris Horn http://chorn.com/
+# See MIT-LICENSE.txt
 
-require "pp"
+# I'm pretty sure this whole thing sucks.
+# TODO: Make it not suck.
 
-module Phone
+# Comments are for suckers.
+
+module Dialable
   class NANP
     ##
     # Raised if something other than a valid NANP is supplied
@@ -10,32 +15,29 @@ module Phone
     
     module ServiceCodes # ERC, Easily Recognizable Codes
       ERC = {
-        211	=> "Community Information and Referral Services",
-        311	=> "Non-Emergency Police and Other Governmental Services",
-        411	=> "Local Directory Assistance",
+        211 => "Community Information and Referral Services",
+        311 => "Non-Emergency Police and Other Governmental Services",
+        411 => "Local Directory Assistance",
         511 => "Traffic and Transportation Information (US); Provision of Weather and Traveller Information Services (Canada)",
-        611	=> "Repair Service",
-        711	=> "Telecommunications Relay Service (TRS)",
-        811	=> "Access to One Call Services to Protect Pipeline and Utilities from Excavation Damage (US); Non-Urgent Health Teletriage Services (Canada)",
-        911	=> "Emergency"
+        611 => "Repair Service",
+        711 => "Telecommunications Relay Service (TRS)",
+        811 => "Access to One Call Services to Protect Pipeline and Utilities from Excavation Damage (US); Non-Urgent Health Teletriage Services (Canada)",
+        911 => "Emergency"
       }
     end
     
     module Patterns
-      List = [
+      VALID = [
         /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*[ex]+\D*(\d{1,5})\D*$/i,
         /^\D*1?\D*([2-9]\d\d)[ $\\\.-]*(\d{3})[ $\\\.-]*(\d{4})[ $\\\.\*-]*(\d{1,5})\D*$/i,
         /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*$/,
         /^(\D*)(\d{3})\D*(\d{4})\D*$/,
         /^\D*([2-9]11)\D*$/,
-        /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D.*/
+        /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D.*/  # Last ditch, just find a number
         ]
     end
     
-    attr_writer :areacode
-    attr_writer :prefix
-    attr_writer :line
-    attr_writer :extension
+    attr_accessor :areacode, :prefix, :line, :extension
     
     def initialize(parts={})
       self.areacode  = parts[:areacode]  ? parts[:areacode]  : nil
@@ -45,8 +47,8 @@ module Phone
     end
   
     def self.parse(number)
-      Patterns::List.each do |pat|
-        return Phone::NANP.new(:areacode => $1, :prefix => $2, :line => $3, :extension => $4) if number =~ pat
+      Patterns::VALID.each do |pat|
+        return Dialable::NANP.new(:areacode => $1, :prefix => $2, :line => $3, :extension => $4) if number =~ pat
       end
       
       raise InvalidNANPError, "Not a valid NANP Phone Number."
