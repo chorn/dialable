@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
+# Copyright (c) 2008 Chris Horn http://chorn.com/
+# See MIT-LICENSE.txt
 
-require "phone"
-require "pp"
+require "dialable"
 
 ARGV.each do |filename|
   File.open(filename).each do |line|
@@ -11,7 +12,7 @@ ARGV.each do |filename|
     next if line =~ /^(\d{10})$/ or line =~ /^\d{3}-\d{3}-\d{4}$/
 
     begin
-      d = Phone::NANP.parse(line)
+      d = Dialable::NANP.parse(line)
     rescue
       d = "XXX-XXX-XXXX"
     end

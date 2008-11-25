@@ -1,0 +1,3 @@
+== dialable
+
+A gem that provides parsing and output of phone numbers according to NANPA standards.
