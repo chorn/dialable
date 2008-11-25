@@ -21,6 +21,17 @@ module Phone
       }
     end
     
+    module Patterns
+      List = [
+        /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*[ex]+\D*(\d{1,5})\D*$/i,
+        /^\D*1?\D*([2-9]\d\d)[ $\\\.-]*(\d{3})[ $\\\.-]*(\d{4})[ $\\\.\*-]*(\d{1,5})\D*$/i,
+        /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*$/,
+        /^(\D*)(\d{3})\D*(\d{4})\D*$/,
+        /^\D*([2-9]11)\D*$/,
+        /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D.*/
+        ]
+    end
+    
     attr_writer :areacode
     attr_writer :prefix
     attr_writer :line
@@ -34,45 +45,11 @@ module Phone
     end
   
     def self.parse(number)
-      areacode = nil
-      prefix = nil
-      line = nil
-      extension = nil
-
-      if number =~ /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*[ex]+\D*(\d{1,5})\D*$/i then
-        areacode = $1
-        prefix = $2
-        line = $3
-        extension = $4
-      elsif number =~ /^\D*1?\D*([2-9]\d\d)[ $\\\.-]*(\d{3})[ $\\\.-]*(\d{4})[ $\\\.\*-]*(\d{1,5})\D*$/i then
-        areacode = $1
-        prefix = $2
-        line = $3
-        extension = $4
-      elsif number =~ /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*$/ then
-        areacode = $1
-        prefix = $2
-        line = $3
-      elsif number =~ /^\D*(\d{3})\D*(\d{4})\D*$/ then
-        prefix = $1
-        line = $2
-      elsif number =~ /^\D*([2-9]11)\D*$/ then
-        areacode = $1
-      elsif number =~ /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D.*/ then # last ditch
-        areacode = $1
-        prefix = $2
-        line = $3
-      else
-        raise InvalidNANPError, "Not a valid NANP Phone Number."
+      Patterns::List.each do |pat|
+        return Phone::NANP.new(:areacode => $1, :prefix => $2, :line => $3, :extension => $4) if number =~ pat
       end
       
-      return Phone::NANP.new(
-        :areacode => areacode,
-        :prefix => prefix,
-        :line => line,
-        :extension => extension
-      )
-      
+      raise InvalidNANPError, "Not a valid NANP Phone Number."
     end
 
     def erc?
