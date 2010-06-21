@@ -1,0 +1,1033 @@
+--- 
+971: 
+  :country: US
+  :timezone: P
+904: 
+  :country: US
+  :timezone: E
+770: 
+  :country: US
+  :timezone: E
+234: 
+  :country: US
+  :timezone: E
+435: 
+  :country: US
+  :timezone: M
+636: 
+  :country: US
+  :timezone: C
+301: 
+  :country: US
+  :timezone: E
+502: 
+  :country: US
+  :timezone: E
+703: 
+  :country: US
+  :timezone: E
+804: 
+  :country: US
+  :timezone: E
+201: 
+  :country: US
+  :timezone: E
+402: 
+  :country: US
+  :timezone: C
+603: 
+  :country: US
+  :timezone: E
+268: 
+  :country: ANTIGUA/BARBUDA
+  :timezone: A
+469: 
+  :country: US
+  :timezone: C
+670: 
+  :country: US
+  :timezone: (UTC+10)
+972: 
+  :country: US
+  :timezone: C
+905: 
+  :country: CANADA
+  :timezone: E
+570: 
+  :country: US
+  :timezone: E
+302: 
+  :country: US
+  :timezone: E
+503: 
+  :country: US
+  :timezone: P
+704: 
+  :country: US
+  :timezone: E
+939: 
+  :country: US
+  :timezone: A
+872: 
+  :country: US
+  :timezone: C
+805: 
+  :country: US
+  :timezone: P
+202: 
+  :country: US
+  :timezone: E
+403: 
+  :country: CANADA
+  :timezone: M
+604: 
+  :country: CANADA
+  :timezone: P
+269: 
+  :country: US
+  :timezone: E
+470: 
+  :country: US
+  :timezone: E
+671: 
+  :country: US
+  :timezone: (UTC+10)
+336: 
+  :country: US
+  :timezone: E
+973: 
+  :country: US
+  :timezone: E
+906: 
+  :country: US
+  :timezone: EC
+772: 
+  :country: US
+  :timezone: E
+571: 
+  :country: US
+  :timezone: E
+303: 
+  :country: US
+  :timezone: M
+504: 
+  :country: US
+  :timezone: C
+705: 
+  :country: CANADA
+  :timezone: E
+940: 
+  :country: US
+  :timezone: C
+806: 
+  :country: US
+  :timezone: C
+404: 
+  :country: US
+  :timezone: E
+605: 
+  :country: US
+  :timezone: CM
+270: 
+  :country: US
+  :timezone: EC
+337: 
+  :country: US
+  :timezone: C
+203: 
+  :country: US
+  :timezone: E
+907: 
+  :country: US
+  :timezone: (UTC-9)
+773: 
+  :country: US
+  :timezone: C
+438: 
+  :country: CANADA
+  :timezone: E
+304: 
+  :country: US
+  :timezone: E
+505: 
+  :country: US
+  :timezone: M
+706: 
+  :country: US
+  :timezone: E
+941: 
+  :country: US
+  :timezone: E
+807: 
+  :country: CANADA
+  :timezone: EC
+740: 
+  :country: US
+  :timezone: E
+405: 
+  :country: US
+  :timezone: C
+606: 
+  :country: US
+  :timezone: EC
+204: 
+  :country: CANADA
+  :timezone: C
+908: 
+  :country: US
+  :timezone: E
+774: 
+  :country: US
+  :timezone: E
+305: 
+  :country: US
+  :timezone: E
+506: 
+  :country: CANADA
+  :timezone: A
+707: 
+  :country: US
+  :timezone: P
+573: 
+  :country: US
+  :timezone: C
+808: 
+  :country: US
+  :timezone: (UTC-10)
+406: 
+  :country: US
+  :timezone: M
+607: 
+  :country: US
+  :timezone: E
+473: 
+  :country: GRENADA
+  :timezone: A
+339: 
+  :country: US
+  :timezone: E
+540: 
+  :country: US
+  :timezone: E
+205: 
+  :country: US
+  :timezone: C
+909: 
+  :country: US
+  :timezone: P
+775: 
+  :country: US
+  :timezone: P
+239: 
+  :country: US
+  :timezone: E
+440: 
+  :country: US
+  :timezone: E
+641: 
+  :country: US
+  :timezone: C
+306: 
+  :country: CANADA
+  :timezone: C
+507: 
+  :country: US
+  :timezone: C
+708: 
+  :country: US
+  :timezone: C
+574: 
+  :country: US
+  :timezone: EC
+876: 
+  :country: JAMAICA
+  :timezone: E
+809: 
+  :country: Dominican Republic
+  :timezone: E
+608: 
+  :country: US
+  :timezone: C
+340: 
+  :country: US
+  :timezone: A
+541: 
+  :country: US
+  :timezone: MP
+206: 
+  :country: US
+  :timezone: P
+407: 
+  :country: US
+  :timezone: E
+910: 
+  :country: US
+  :timezone: E
+843: 
+  :country: US
+  :timezone: E
+441: 
+  :country: BERMUDA
+  :timezone: A
+307: 
+  :country: US
+  :timezone: M
+508: 
+  :country: US
+  :timezone: E
+709: 
+  :country: CANADA
+  :timezone: NA
+575: 
+  :country: US
+  :timezone: M
+240: 
+  :country: US
+  :timezone: E
+877: {}
+
+810: 
+  :country: US
+  :timezone: E
+609: 
+  :country: US
+  :timezone: E
+475: 
+  :country: US
+  :timezone: E
+207: 
+  :country: US
+  :timezone: E
+408: 
+  :country: US
+  :timezone: P
+978: 
+  :country: US
+  :timezone: E
+442: 
+  :country: US
+  :timezone: P
+308: 
+  :country: US
+  :timezone: CM
+509: 
+  :country: US
+  :timezone: P
+710: 
+  :country: US
+878: 
+  :country: US
+  :timezone: E
+208: 
+  :country: US
+  :timezone: MP
+409: 
+  :country: US
+  :timezone: C
+610: 
+  :country: US
+  :timezone: E
+979: 
+  :country: US
+  :timezone: C
+912: 
+  :country: US
+  :timezone: E
+845: 
+  :country: US
+  :timezone: E
+778: 
+  :country: CANADA
+  :timezone: P
+443: 
+  :country: US
+  :timezone: E
+309: 
+  :country: US
+  :timezone: C
+510: 
+  :country: US
+  :timezone: P
+242: 
+  :country: BAHAMAS
+  :timezone: E
+812: 
+  :country: US
+  :timezone: EC
+276: 
+  :country: US
+  :timezone: E
+678: 
+  :country: US
+  :timezone: E
+209: 
+  :country: US
+  :timezone: P
+410: 
+  :country: US
+  :timezone: E
+980: 
+  :country: US
+  :timezone: E
+913: 
+  :country: US
+  :timezone: C
+779: 
+  :country: US
+  :timezone: C
+310: 
+  :country: US
+  :timezone: P
+712: 
+  :country: US
+  :timezone: C
+947: 
+  :country: US
+  :timezone: E
+813: 
+  :country: US
+  :timezone: E
+478: 
+  :country: US
+  :timezone: E
+210: 
+  :country: US
+  :timezone: C
+612: 
+  :country: US
+  :timezone: C
+914: 
+  :country: US
+  :timezone: E
+847: 
+  :country: US
+  :timezone: C
+780: 
+  :country: CANADA
+  :timezone: M
+646: 
+  :country: US
+  :timezone: E
+512: 
+  :country: US
+  :timezone: C
+713: 
+  :country: US
+  :timezone: C
+814: 
+  :country: US
+  :timezone: E
+747: 
+  :country: US
+  :timezone: P
+479: 
+  :country: US
+  :timezone: C
+345: 
+  :country: CAYMAN ISLANDS
+  :timezone: E
+412: 
+  :country: US
+  :timezone: E
+613: 
+  :country: CANADA
+  :timezone: E
+915: 
+  :country: US
+  :timezone: CM
+848: 
+  :country: US
+  :timezone: E
+781: 
+  :country: US
+  :timezone: E
+312: 
+  :country: US
+  :timezone: C
+513: 
+  :country: US
+  :timezone: E
+714: 
+  :country: US
+  :timezone: P
+580: 
+  :country: US
+  :timezone: C
+647: 
+  :country: CANADA
+  :timezone: E
+949: 
+  :country: US
+  :timezone: P
+815: 
+  :country: US
+  :timezone: C
+480: 
+  :country: US
+  :timezone: M
+681: 
+  :country: US
+  :timezone: E
+212: 
+  :country: US
+  :timezone: E
+413: 
+  :country: US
+  :timezone: E
+614: 
+  :country: US
+  :timezone: E
+916: 
+  :country: US
+  :timezone: P
+849: 
+  :country: Dominican Republic
+  :timezone: E
+715: 
+  :country: US
+  :timezone: C
+313: 
+  :country: US
+  :timezone: E
+514: 
+  :country: CANADA
+  :timezone: E
+581: 
+  :country: CANADA
+246: 
+  :country: BARBADOS
+  :timezone: A
+816: 
+  :country: US
+  :timezone: C
+682: 
+  :country: US
+  :timezone: C
+347: 
+  :country: US
+  :timezone: E
+213: 
+  :country: US
+  :timezone: P
+414: 
+  :country: US
+  :timezone: C
+615: 
+  :country: US
+  :timezone: C
+917: 
+  :country: US
+  :timezone: E
+850: 
+  :country: US
+  :timezone: EC
+716: 
+  :country: US
+  :timezone: E
+515: 
+  :country: US
+  :timezone: C
+649: 
+  :country: TURKS & CAICOS ISLANDS
+  :timezone: E
+314: 
+  :country: US
+  :timezone: C
+951: 
+  :country: US
+  :timezone: P
+817: 
+  :country: US
+  :timezone: C
+:created: 2010-06-21 13:20:00.751884 -04:00
+214: 
+  :country: US
+  :timezone: C
+415: 
+  :country: US
+  :timezone: P
+616: 
+  :country: US
+  :timezone: E
+281: 
+  :country: US
+  :timezone: C
+985: 
+  :country: US
+  :timezone: C
+918: 
+  :country: US
+  :timezone: C
+784: 
+  :country: ST. VINCENT & GRENADINES
+  :timezone: A
+717: 
+  :country: US
+  :timezone: E
+516: 
+  :country: US
+  :timezone: E
+248: 
+  :country: US
+  :timezone: E
+650: 
+  :country: US
+  :timezone: P
+315: 
+  :country: US
+  :timezone: E
+952: 
+  :country: US
+  :timezone: C
+818: 
+  :country: US
+  :timezone: P
+215: 
+  :country: US
+  :timezone: E
+416: 
+  :country: CANADA
+  :timezone: E
+617: 
+  :country: US
+  :timezone: E
+684: 
+  :country: US
+919: 
+  :country: US
+  :timezone: E
+785: 
+  :country: US
+  :timezone: CM
+718: 
+  :country: US
+  :timezone: E
+517: 
+  :country: US
+  :timezone: E
+450: 
+  :country: CANADA
+  :timezone: E
+651: 
+  :country: US
+  :timezone: C
+316: 
+  :country: US
+  :timezone: C
+819: 
+  :country: CANADA
+  :timezone: E
+551: 
+  :country: US
+  :timezone: E
+216: 
+  :country: US
+  :timezone: E
+417: 
+  :country: US
+  :timezone: C
+618: 
+  :country: US
+  :timezone: C
+484: 
+  :country: US
+  :timezone: E
+920: 
+  :country: US
+  :timezone: C
+786: 
+  :country: US
+  :timezone: E
+719: 
+  :country: US
+  :timezone: M
+585: 
+  :country: US
+  :timezone: E
+250: 
+  :country: CANADA
+  :timezone: P
+317: 
+  :country: US
+  :timezone: E
+518: 
+  :country: US
+  :timezone: E
+954: 
+  :country: US
+  :timezone: E
+217: 
+  :country: US
+  :timezone: C
+418: 
+  :country: CANADA
+  :timezone: E
+619: 
+  :country: US
+  :timezone: P
+284: 
+  :country: BRITISH VIRGIN ISLANDS
+  :timezone: A
+351: 
+  :country: US
+  :timezone: E
+787: 
+  :country: US
+  :timezone: A
+720: 
+  :country: US
+  :timezone: M
+385: 
+  :country: US
+  :timezone: M
+586: 
+  :country: US
+  :timezone: E
+251: 
+  :country: US
+  :timezone: C
+318: 
+  :country: US
+  :timezone: C
+519: 
+  :country: CANADA
+  :timezone: E
+888: {}
+
+754: 
+  :country: US
+  :timezone: E
+218: 
+  :country: US
+  :timezone: C
+419: 
+  :country: US
+  :timezone: E
+620: 
+  :country: US
+  :timezone: CM
+352: 
+  :country: US
+  :timezone: E
+989: 
+  :country: US
+  :timezone: E
+386: 
+  :country: US
+  :timezone: E
+587: 
+  :country: CANADA
+  :timezone: M
+252: 
+  :country: US
+  :timezone: E
+319: 
+  :country: US
+  :timezone: C
+520: 
+  :country: US
+  :timezone: M
+956: 
+  :country: US
+  :timezone: C
+219: 
+  :country: US
+  :timezone: EC
+856: 
+  :country: US
+  :timezone: E
+253: 
+  :country: US
+  :timezone: P
+320: 
+  :country: US
+  :timezone: C
+857: 
+  :country: US
+  :timezone: E
+254: 
+  :country: US
+  :timezone: C
+321: 
+  :country: US
+  :timezone: E
+757: 
+  :country: US
+  :timezone: E
+623: 
+  :country: US
+  :timezone: M
+925: 
+  :country: US
+  :timezone: P
+858: 
+  :country: US
+  :timezone: P
+724: 
+  :country: US
+  :timezone: E
+456: {}
+
+657: 
+  :country: US
+  :timezone: P
+758: 
+  :country: ST. LUCIA
+  :timezone: A
+423: 
+  :country: US
+  :timezone: EC
+289: 
+  :country: CANADA
+  :timezone: E
+859: 
+  :country: US
+  :timezone: E
+256: 
+  :country: US
+  :timezone: C
+323: 
+  :country: US
+  :timezone: P
+424: 
+  :country: US
+  :timezone: P
+860: 
+  :country: US
+  :timezone: E
+458: 
+  :country: US
+  :timezone: MP
+760: 
+  :country: US
+  :timezone: P
+626: 
+  :country: US
+  :timezone: P
+559: 
+  :country: US
+  :timezone: P
+224: 
+  :country: US
+  :timezone: C
+425: 
+  :country: US
+  :timezone: P
+928: 
+  :country: US
+  :timezone: M
+727: 
+  :country: US
+  :timezone: E
+660: 
+  :country: US
+  :timezone: C
+325: 
+  :country: US
+  :timezone: C
+828: 
+  :country: US
+  :timezone: E
+225: 
+  :country: US
+  :timezone: C
+862: 
+  :country: US
+  :timezone: E
+661: 
+  :country: US
+  :timezone: P
+829: 
+  :country: Dominican Republic
+  :timezone: E
+762: 
+  :country: US
+  :timezone: E
+360: 
+  :country: US
+  :timezone: P
+561: 
+  :country: US
+  :timezone: E
+226: 
+  :country: CANADA
+  :timezone: E
+863: 
+  :country: US
+  :timezone: E
+662: 
+  :country: US
+  :timezone: C
+260: 
+  :country: US
+  :timezone: E
+830: 
+  :country: US
+  :timezone: C
+763: 
+  :country: US
+  :timezone: C
+361: 
+  :country: US
+  :timezone: C
+562: 
+  :country: US
+  :timezone: P
+931: 
+  :country: US
+  :timezone: EC
+864: 
+  :country: US
+  :timezone: E
+831: 
+  :country: US
+  :timezone: P
+563: 
+  :country: US
+  :timezone: C
+228: 
+  :country: US
+  :timezone: C
+630: 
+  :country: US
+  :timezone: C
+865: 
+  :country: US
+  :timezone: E
+731: 
+  :country: US
+  :timezone: C
+664: 
+  :country: MONTSERRAT
+  :timezone: A
+530: 
+  :country: US
+  :timezone: P
+262: 
+  :country: US
+  :timezone: C
+832: 
+  :country: US
+  :timezone: C
+765: 
+  :country: US
+  :timezone: E
+229: 
+  :country: US
+  :timezone: E
+430: 
+  :country: US
+  :timezone: C
+631: 
+  :country: US
+  :timezone: E
+866: {}
+
+732: 
+  :country: US
+  :timezone: E
+330: 
+  :country: US
+  :timezone: E
+900: {}
+
+867: 
+  :country: CANADA
+  :timezone: CMP
+800: {}
+
+331: 
+  :country: US
+  :timezone: C
+264: 
+  :country: ANGUILLA
+  :timezone: A
+901: 
+  :country: US
+  :timezone: C
+767: 
+  :country: DOMINICA
+  :timezone: A
+700: {}
+
+231: 
+  :country: US
+  :timezone: E
+432: 
+  :country: US
+  :timezone: C
+868: 
+  :country: TRINIDAD AND TOBAGO
+  :timezone: A
+801: 
+  :country: US
+  :timezone: M
+734: 
+  :country: US
+  :timezone: E
+533: {}
+
+600: 
+  :country: CANADA
+902: 
+  :country: CANADA
+  :timezone: A
+701: 
+  :country: US
+  :timezone: CM
+567: 
+  :country: US
+  :timezone: E
+500: {}
+
+936: 
+  :country: US
+  :timezone: C
+869: 
+  :country: ST. KITTS AND NEVIS
+  :timezone: A
+802: 
+  :country: US
+  :timezone: E
+601: 
+  :country: US
+  :timezone: C
+970: 
+  :country: US
+  :timezone: M
+903: 
+  :country: US
+  :timezone: C
+769: 
+  :country: US
+  :timezone: C
+702: 
+  :country: US
+  :timezone: P
+434: 
+  :country: US
+  :timezone: E
+501: 
+  :country: US
+  :timezone: C
+937: 
+  :country: US
+  :timezone: E
+870: 
+  :country: US
+  :timezone: C
+803: 
+  :country: US
+  :timezone: E
+401: 
+  :country: US
+  :timezone: E
+602: 
+  :country: US
+  :timezone: M
+267: 
+  :country: US
+  :timezone: E
+334: 
+  :country: US
+  :timezone: C

@@ -1,19 +1,21 @@
-# Copyright (c) 2008 Chris Horn http://chorn.com/
+# Copyright (c) 2008-2010 Chris Horn http://chorn.com/
 # See MIT-LICENSE.txt
 
-# I'm pretty sure this whole thing sucks.
-# TODO: Make it not suck.
+# TODO: Make this less sucky.
 
-# Comments are for suckers.
+require "yaml"
 
 module Dialable
   class NANP
+
     ##
     # Raised if something other than a valid NANP is supplied
     class InvalidNANPError < StandardError
     end
-    
-    module ServiceCodes # ERC, Easily Recognizable Codes
+
+    ##
+    # ERC, Easily Recognizable Codes
+    module ServiceCodes
       ERC = {
         211 => "Community Information and Referral Services",
         311 => "Non-Emergency Police and Other Governmental Services",
@@ -25,7 +27,9 @@ module Dialable
         911 => "Emergency"
       }
     end
-    
+
+    ##
+    # Regex's to match valid phone numbers
     module Patterns
       VALID = [
         /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*[ex]+\D*(\d{1,5})\D*$/i,
@@ -36,8 +40,14 @@ module Dialable
         /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D.*/  # Last ditch, just find a number
         ]
     end
+
+    ##
+    # Valid area codes per nanpa.com
+    module AreaCodes
+      NANP = YAML.load_file(File.dirname(__FILE__) + "/../support/nanpa.yaml")
+    end
     
-    attr_accessor :areacode, :prefix, :line, :extension
+    attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones
     
     def initialize(parts={})
       self.areacode  = parts[:areacode]  ? parts[:areacode]  : nil
@@ -45,10 +55,77 @@ module Dialable
       self.line      = parts[:line]      ? parts[:line]      : nil
       self.extension = parts[:extension] ? parts[:extension] : nil
     end
-  
+
+    def areacode=(raw_code)
+      code = raw_code.to_i
+      if AreaCodes::NANP[code]
+        @areacode = raw_code
+        self.location = AreaCodes::NANP[code][:location] if AreaCodes::NANP[code][:location]
+        self.country = AreaCodes::NANP[code][:country] if AreaCodes::NANP[code][:country]
+
+        if AreaCodes::NANP[code][:timezone]
+          self.timezones = []
+          self.relative_timezones = []
+          tz = AreaCodes::NANP[code][:timezone]
+          t = Time.now
+          local_utc_offset = t.utc_offset/3600
+
+          if tz =~ /UTC(-\d+)/
+            self.timezones << tz
+            utc_offset = $1.to_i
+            self.relative_timezones << (utc_offset) - local_utc_offset
+          else
+            tz.split(//).each do |zone|  # http://www.timeanddate.com/library/abbreviations/timezones/na/
+              zone = "HA" if zone == "H"
+              zone = "AK" if zone == "K"
+              tz = zone + (t.dst? ? "D" : "S") + "T"  # This is cludgey
+              self.timezones << tz
+              delta = nil
+              if Time.zone_offset(tz)
+                delta = Time.zone_offset(tz)/3600 - local_utc_offset
+              else
+                case zone
+                when /N[SD]T/
+                  delta = -3.5 - local_utc_offset
+                when /A[SD]T/
+                  delta = -4 - local_utc_offset
+                when /A?K[SD]T/
+                  delta = -9 - local_utc_offset
+                when /HA?[SD]T/
+                  delta = -10 - local_utc_offset
+                end
+                delta = delta - 1 if t.dst?
+              end
+              # puts "#{delta} // #{Time.zone_offset(tz)} // #{tz} // #{local_utc_offset}"
+              self.relative_timezones << delta if delta
+            end
+          end
+        end
+      else
+        raise InvalidNANPError, "#{code} is not a valid NANP Area Code."
+      end
+    end
+
+    def timezone
+      @timezones.first if @timezones
+    end
+    
+    def timezone=(tz)
+      @timezones = [tz] if tz
+    end
+
+    # def relative_timezones
+    #   rt = []
+    #   @timezones.each do |tz|
+    #     rt << 
+    #   end
+    #   rt
+    # end
+    
+
     def self.parse(number)
-      Patterns::VALID.each do |pat|
-        return Dialable::NANP.new(:areacode => $1, :prefix => $2, :line => $3, :extension => $4) if number =~ pat
+      Patterns::VALID.each do |pattern|
+        return Dialable::NANP.new(:areacode => $1, :prefix => $2, :line => $3, :extension => $4) if number =~ pattern
       end
       
       raise InvalidNANPError, "Not a valid NANP Phone Number."
