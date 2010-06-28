@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name     = "dialable"
-  s.version  = "0.1.0"
-  s.date     = "2010-06-21"
+  s.version  = "0.1.1"
+  s.date     = "2010-06-28"
   s.summary  = "Provides parsing and output of phone numbers according to NANPA standards."
   s.email    = "chorn@chorn.com"
   s.homepage = "http://github.com/chorn/dialable"
@@ -9,7 +9,6 @@ Gem::Specification.new do |s|
   s.has_rdoc = true
   s.authors  = ["Chris Horn"]
   s.files    = [ "LICENSE",
-                 "README",
                  "README.rdoc",
                  "Rakefile",
                  "TODO",
