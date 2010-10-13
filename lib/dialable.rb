@@ -4,6 +4,7 @@
 # TODO: Make this less sucky.
 
 require "yaml"
+require "tzinfo"
 
 module Dialable
   class NANP
