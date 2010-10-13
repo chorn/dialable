@@ -8,6 +8,6 @@ describe Dialable do
     it("should extract the prefix") { subject.prefix.should == "555" }
     it("should extract the line number") { subject.line.should == "1212" }
     it("should extract the extension") { subject.extension.should == "1234" }
-    it("should determine the time zone") { subject.timezones.should == ["MST"] }
+    it("should determine the time zone") { subject.timezones.should == ["MDT"] }
   end
 end
