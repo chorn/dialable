@@ -11,14 +11,6 @@ describe Dialable do
     it("should determine the time zone") { subject.timezones.should == ["MDT"] }
   end
 
-  describe "with pretty output" do
-    subject { Dialable::NANP.parse("5858675309") }
-    it("should extract the area code") { subject.areacode.should == "585" }
-    it("should extract the prefix") { subject.prefix.should == "867" }
-    it("should extract the line number") { subject.line.should == "5309" }
-    it("should determine the time zone") { subject.timezones.should == ["EDT"] }
-  end
-
   NANP = YAML.load_file(File.join(File.dirname(__FILE__), '..', 'data') + "/nanpa.yaml")
   NANP.delete(:created)
   NANP.each do |nanp|
@@ -31,7 +23,18 @@ describe Dialable do
       subject { Dialable::NANP.parse("noise #{areacode}noise5551212") }
       it("should extract the area code") { subject.areacode.should == areacode.to_s }
     end
+    describe "with a sloppy areacode of #{areacode} and number" do
+      subject { Dialable::NANP.parse("+1-#{areacode}555  1212") }
+      it("should match the location") { subject.location.should == nanp[1][:location] }
+    end
+    describe "with areacode of #{areacode} and a sloppy extension" do
+      subject { Dialable::NANP.parse("1 #{areacode} 867 5309 xAAA0001") }
+      it("should match the country") { subject.country.should == nanp[1][:country] }
+    end
+    describe "with areacode of #{areacode} and lots of garbage" do
+      subject { Dialable::NANP.parse("1 #{areacode}yadayada867BLAH5309....derp") }
+      it("should match the timezone") { subject.raw_timezone.should == nanp[1][:timezone] }
+    end
   end
-
 
 end

@@ -49,7 +49,7 @@ module Dialable
       NANP = YAML.load_file(data_path + "/nanpa.yaml")
     end
     
-    attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones
+    attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones, :raw_timezone
     
     def initialize(parts={})
       self.areacode  = parts[:areacode]  ? parts[:areacode]  : nil
@@ -64,13 +64,14 @@ module Dialable
         @areacode = raw_code
         self.location = AreaCodes::NANP[code][:location] if AreaCodes::NANP[code][:location]
         self.country = AreaCodes::NANP[code][:country] if AreaCodes::NANP[code][:country]
+        self.raw_timezone = AreaCodes::NANP[code][:timezone] if AreaCodes::NANP[code][:timezone]
 
         if AreaCodes::NANP[code][:timezone]
           self.timezones = []
           self.relative_timezones = []
           tz = AreaCodes::NANP[code][:timezone]
-          t = Time.now
-          local_utc_offset = t.utc_offset/3600
+          now = Time.now
+          local_utc_offset = now.utc_offset/3600
 
           if tz =~ /UTC(-\d+)/
             self.timezones << tz
@@ -80,7 +81,7 @@ module Dialable
             tz.split(//).each do |zone|  # http://www.timeanddate.com/library/abbreviations/timezones/na/
               zone = "HA" if zone == "H"
               zone = "AK" if zone == "K"
-              tz = zone + (t.dst? ? "D" : "S") + "T"  # This is cludgey
+              tz = zone + (now.dst? ? "D" : "S") + "T"  # This is cludgey
               self.timezones << tz
               delta = nil
               if Time.zone_offset(tz)
@@ -96,7 +97,7 @@ module Dialable
                 when /HA?[SD]T/
                   delta = -10 - local_utc_offset
                 end
-                delta = delta - 1 if delta and t.dst?
+                delta = delta - 1 if delta and now.dst?
               end
               # puts "#{delta} // #{Time.zone_offset(tz)} // #{tz} // #{local_utc_offset}"
               self.relative_timezones << delta if delta
