@@ -1,7 +1,8 @@
 Gem::Specification.new do |s|
+  s.licenses = ['MIT', 'LGPL-2']
   s.name     = "dialable"
-  s.version  = "0.1.1"
-  s.date     = "2010-06-28"
+  s.version  = "0.5.0"
+  s.date     = "2011-06-22"
   s.summary  = "Provides parsing and output of phone numbers according to NANPA standards."
   s.email    = "chorn@chorn.com"
   s.homepage = "http://github.com/chorn/dialable"
@@ -14,12 +15,10 @@ Gem::Specification.new do |s|
                  "TODO",
                  "dialable.gemspec",
                  "lib/dialable.rb",
-                 "script/destroy",
-                 "script/generate",
+                 "data/nanpa.yaml",
                  "spec/dialable_spec.rb",
                  "spec/spec_helper.rb",
-                 "support/make_yaml_nanpa.rb",
-                 "support/nanpa.yaml",
+                 "support/make_yaml_nanpa.rb"
                  ]
   s.test_files = []
   s.rdoc_options = []

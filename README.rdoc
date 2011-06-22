@@ -15,7 +15,7 @@ References: NANPA: North American Numbering Plan Administration http://nanpa.com
 The YAML file with the valid area codes and easily recognizable codes
 (like 911) can get out of date.  To update your own copy, run:
 
-support/make_yaml_nanpa.rb > support/nanpa.yaml
+support/make_yaml_nanpa.rb > data/nanpa.yaml
 
 
 require "dialable"

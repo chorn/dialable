@@ -11,19 +11,24 @@ system('mdb-export AllNPAs.mdb "`mdb-tables -1 AllNPAs.mdb`" > AllNPAs.csv')
 all = CSV.read("AllNPAs.csv")
 h = all[0]
 
+in_service = h.index("In Service?")
+location   = h.index("Location")
+country    = h.index("Country")
+tz         = h.index("Time Zone")
+npa        = h.index("NPA")
+
 nanpa = { :created => Time.now }
 
 all.each do |row|
-  next unless row[h.index("In Service?")] == "Yes"
-  areacode = row.values_at(h.index("NPA")).to_s.to_i
+  next unless row[in_service] == "Yes"
+  areacode = row[npa].to_s.to_i
   nanpa[areacode] = {}
-  nanpa[areacode][:location] = row.values_at(h.index("Location")).to_s if row.values_at(h.index("Location")).to_s.size > 0 and row.values_at(h.index("Location")).to_s.size =~ /NANP area/
-  nanpa[areacode][:country] = row.values_at(h.index("Country")).to_s if row.values_at(h.index("Country")).to_s.size > 0
-  nanpa[areacode][:timezone] = row.values_at(h.index("Time Zone")).to_s if row.values_at(h.index("Time Zone")).to_s.size > 0
+  nanpa[areacode][:country] = row[country].to_s if row[country].to_s.size > 0
+  nanpa[areacode][:timezone] = row[tz].to_s if row[tz].to_s.size > 0
+  nanpa[areacode][:location] = row[location].to_s if row[location].to_s.size > 0 and row[location].to_s !~ /NANP Area/i and row[location].to_s !~ /^#{row[country].to_s}$/i 
 end
 
 puts nanpa.to_yaml
 
 FileUtils.rm ["AllNPAs.zip", "AllNPAs.mdb", "AllNPAs.csv"]
-
 

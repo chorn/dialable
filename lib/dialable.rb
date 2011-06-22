@@ -1,10 +1,9 @@
-# Copyright (c) 2008-2010 Chris Horn http://chorn.com/
+# Copyright (c) 2008-2011 Chris Horn http://chorn.com/
 # See MIT-LICENSE.txt
-
-# TODO: Make this less sucky.
 
 require "yaml"
 require "tzinfo"
+require 'rubygems'
 
 module Dialable
   class NANP
@@ -30,7 +29,7 @@ module Dialable
     end
 
     ##
-    # Regex's to match valid phone numbers
+    # Regexs to match valid phone numbers
     module Patterns
       VALID = [
         /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*[ex]+\D*(\d{1,5})\D*$/i,
@@ -45,7 +44,9 @@ module Dialable
     ##
     # Valid area codes per nanpa.com
     module AreaCodes
-      NANP = YAML.load_file(File.dirname(__FILE__) + "/../support/nanpa.yaml")
+      data_path = Gem::datadir('dialable')
+      data_path ||= File.join(File.dirname(__FILE__), '..', 'data')
+      NANP = YAML.load_file(data_path + "/nanpa.yaml")
     end
     
     attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones
@@ -95,7 +96,7 @@ module Dialable
                 when /HA?[SD]T/
                   delta = -10 - local_utc_offset
                 end
-                delta = delta - 1 if t.dst?
+                delta = delta - 1 if delta and t.dst?
               end
               # puts "#{delta} // #{Time.zone_offset(tz)} // #{tz} // #{local_utc_offset}"
               self.relative_timezones << delta if delta
@@ -122,7 +123,6 @@ module Dialable
     #   end
     #   rt
     # end
-    
 
     def self.parse(number)
       Patterns::VALID.each do |pattern|
