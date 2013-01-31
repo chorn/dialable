@@ -1,6 +1,7 @@
 # Copyright (c) 2008-2011 Chris Horn http://chorn.com/
 # See MIT-LICENSE.txt
 
+require "dialable/version"
 require "yaml"
 require "tzinfo"
 require 'rubygems'
@@ -45,12 +46,12 @@ module Dialable
     # Valid area codes per nanpa.com
     module AreaCodes
       data_path = Gem::datadir('dialable')
-      data_path ||= File.join(File.dirname(__FILE__), '..', 'data')
-      NANP = YAML.load_file(data_path + "/nanpa.yaml")
+      data_path ||= File.join(File.dirname(__FILE__), '..', 'data', 'dialable')
+      NANP = YAML.load_file(File.join(data_path, "nanpa.yaml"))
     end
-    
+
     attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones, :raw_timezone
-    
+
     def initialize(parts={})
       self.areacode  = parts[:areacode]  ? parts[:areacode]  : nil
       self.prefix    = parts[:prefix]    ? parts[:prefix]    : nil
@@ -112,7 +113,7 @@ module Dialable
     def timezone
       @timezones.first if @timezones
     end
-    
+
     def timezone=(tz)
       @timezones = [tz] if tz
     end
@@ -120,7 +121,7 @@ module Dialable
     # def relative_timezones
     #   rt = []
     #   @timezones.each do |tz|
-    #     rt << 
+    #     rt <<
     #   end
     #   rt
     # end
@@ -129,14 +130,14 @@ module Dialable
       Patterns::VALID.each do |pattern|
         return Dialable::NANP.new(:areacode => $1, :prefix => $2, :line => $3, :extension => $4) if number =~ pattern
       end
-      
+
       raise InvalidNANPError, "Not a valid NANP Phone Number."
     end
 
     def erc?
       return ServiceCodes::ERC[@areacode].nil?
     end
-  
+
     def to_s
       rtn = "#{@prefix}-#{@line}"
       rtn = "#{@areacode}-#{rtn}" if @areacode
@@ -156,7 +157,7 @@ module Dialable
       rtn = "#{@areacode}#{rtn}" if @areacode
       rtn
     end
-  
+
     def to_hash
       return {
         :areacode => @areacode,
@@ -165,5 +166,5 @@ module Dialable
         :extension => @extension
       }
     end
-  end  
+  end
 end

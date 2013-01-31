@@ -1,4 +1,5 @@
 == dialable
+{<img src="https://badge.fury.io/rb/dialable.png" alt="Gem Version" />}[http://badge.fury.io/rb/dialable]
 
 A gem that provides parsing and output of phone numbers according to NANPA standards.
 
