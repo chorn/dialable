@@ -1,5 +1,5 @@
 language: ruby
-script: "rake spec"
+script: "rspec"
 rvm:
   - 1.9.3
   - 1.9.2
