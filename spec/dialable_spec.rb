@@ -1,4 +1,5 @@
 require File.dirname(__FILE__) + '/spec_helper'
+require "timezone"
 require "timecop"
 
 describe Dialable do
@@ -13,13 +14,13 @@ describe Dialable do
   end
 
   describe "with a full NANP number with extension and standard time" do
-    before { Timecop.travel(Time.utc(2013, 1, 1)) }
+    before { Timecop.travel(Timezone::Zone.new(:zone => 'America/Los_Angeles').time Time.utc(2013, 1, 1)) }
     subject { Dialable::NANP.parse("+1(307)555-1212 ext 1234") }
     it("should determine the time zone during standard time") { subject.timezones.should == ["MST"] }
   end
 
   describe "with a full NANP number with extension and daylight standard time" do
-    before { Timecop.travel(Time.utc(2012, 6, 30)) }
+    before { Timecop.travel(Timezone::Zone.new(:zone => 'America/Los_Angeles').time Time.utc(2013, 6, 30)) }
     subject { Dialable::NANP.parse("+1(307)555-1212 ext 1234") }
     it("should determine the time zone during daylight savings time") { subject.timezones.should == ["MDT"] }
   end
