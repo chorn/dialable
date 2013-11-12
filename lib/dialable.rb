@@ -47,6 +47,7 @@ module Dialable
     module AreaCodes
       data_path = Gem::datadir('dialable')
       data_path ||= File.join(File.dirname(__FILE__), '..', 'data', 'dialable')
+      puts data_path
       NANP = YAML.load_file(File.join(data_path, "nanpa.yaml"))
     end
 

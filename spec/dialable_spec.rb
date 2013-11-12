@@ -19,7 +19,7 @@ describe Dialable do
     }
   end
 
-  NANP = YAML.load_file(File.join(File.dirname(__FILE__), '..', 'data') + "/nanpa.yaml")
+  NANP = YAML.load_file(File.join(File.dirname(__FILE__), '..', 'data', 'dialable') + "/nanpa.yaml")
   NANP.delete(:created)
   NANP.each do |nanp|
     areacode = nanp[0]
