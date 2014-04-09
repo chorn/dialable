@@ -3,7 +3,7 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'dialable/version'
 
-spec = Gem::Specification.new do |gem|
+Gem::Specification.new do |gem|
   gem.licenses      = ['MIT', 'LGPL-2']
   gem.required_ruby_version = '>= 1.9.0'
   gem.name          = "dialable"
@@ -18,9 +18,9 @@ spec = Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
-  gem.add_dependency "tzinfo"
+  gem.add_runtime_dependency 'tzinfo'
   gem.add_development_dependency "rake"
   gem.add_development_dependency "rspec"
-  gem.add_development_dependency "tzinfo"
+  gem.add_development_dependency "coveralls"
 end
 
