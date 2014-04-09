@@ -1,6 +1,7 @@
 == dialable
 {<img src="https://badge.fury.io/rb/dialable.png" alt="Gem Version" />}[http://badge.fury.io/rb/dialable]
 {<img src="https://travis-ci.org/chorn/dialable.png" />}[https://travis-ci.org/chorn/dialable]
+{<img src="https://coveralls.io/repos/chorn/dialable/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/chorn/dialable]
 
 A gem that provides parsing and output of phone numbers according to NANPA standards.
 
