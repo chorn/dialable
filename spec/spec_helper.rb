@@ -1,9 +1,7 @@
 $LOAD_PATH.push File.join(File.dirname(__FILE__), '..', 'lib')
 
-require "rubygems"
-require "dialable"
-require 'coveralls'
-Coveralls.wear!
+require 'rubygems'
+require 'simplecov'
+SimpleCov.start
+require 'dialable'
 
-RSpec.configure do |config|
-end
