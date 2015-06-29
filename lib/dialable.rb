@@ -4,6 +4,7 @@ require 'tzinfo'
 require 'rubygems'
 require 'dialable/service_codes'
 require 'dialable/patterns'
+require 'dialable/parsers'
 
 module Dialable
   class NANP
@@ -14,19 +15,29 @@ module Dialable
     module AreaCodes
       data_path = Gem.datadir('dialable')
       data_path ||= File.join(File.dirname(__FILE__), '..', 'data', 'dialable')
-      puts data_path
       NANP = YAML.load_file(File.join(data_path, 'nanpa.yaml'))
     end
 
-    attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones, :raw_timezone, :service_codes, :patterns
+    attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones, :raw_timezone
+    attr_reader :service_codes, :patterns
+
+    def self.parse(string, parser = Dialable::Parsers::NANP)
+      parsed = parser.call(string)
+
+      if parsed
+        return Dialable::NANP.new(parsed)
+      else
+        fail InvalidNANPError, "Not a valid NANP Phone Number."
+      end
+    end
 
     def initialize(parts = {}, options = {})
       self.areacode  = parts.fetch(:areacode)
       self.prefix    = parts.fetch(:prefix)
       self.line      = parts.fetch(:line)
       self.extension = parts.fetch(:extension)
-      self.service_codes = options.fetch(:service_codes) { Dialable::ServiceCodes::NANP }
-      self.patterns      = options.fetch(:patterns)      { Dialable::Patterns::NANP }
+      @service_codes = options.fetch(:service_codes) { Dialable::ServiceCodes::NANP }
+      @patterns      = options.fetch(:patterns)      { Dialable::Patterns::NANP }
     end
 
     def areacode=(raw_code)
@@ -94,23 +105,8 @@ module Dialable
       @relative_timezones.first if @relative_timezones
     end
 
-    def self.parse(number)
-      Dialable::Patterns::NANP.each do |pattern|
-        if number =~ pattern
-          return Dialable::NANP.new(
-            :areacode => Regexp.last_match(1),
-            :prefix => Regexp.last_match(2),
-            :line => Regexp.last_match(3),
-            :extension => Regexp.last_match(4)
-          )
-        end
-      end
-
-      fail InvalidNANPError, "Not a valid NANP Phone Number."
-    end
-
     def erc?
-      @service_codes.has_key?(:@areacode)
+      @service_codes.has_key?(@areacode)
     end
 
     def to_s
