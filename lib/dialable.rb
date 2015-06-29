@@ -1,113 +1,84 @@
-# Copyright (c) 2008-2011 Chris Horn http://chorn.com/
-# See MIT-LICENSE.txt
-
-require "dialable/version"
-require "yaml"
-require "tzinfo"
+require 'dialable/version'
+require 'yaml'
+require 'tzinfo'
 require 'rubygems'
+require 'dialable/service_codes'
+require 'dialable/patterns'
 
 module Dialable
   class NANP
-
-    ##
-    # Raised if something other than a valid NANP is supplied
     class InvalidNANPError < StandardError
     end
 
-    ##
-    # ERC, Easily Recognizable Codes
-    module ServiceCodes
-      ERC = {
-        211 => "Community Information and Referral Services",
-        311 => "Non-Emergency Police and Other Governmental Services",
-        411 => "Local Directory Assistance",
-        511 => "Traffic and Transportation Information (US); Provision of Weather and Traveller Information Services (Canada)",
-        611 => "Repair Service",
-        711 => "Telecommunications Relay Service (TRS)",
-        811 => "Access to One Call Services to Protect Pipeline and Utilities from Excavation Damage (US); Non-Urgent Health Teletriage Services (Canada)",
-        911 => "Emergency"
-      }
-    end
-
-    ##
-    # Regexs to match valid phone numbers
-    module Patterns
-      VALID = [
-        /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*[ex]+\D*(\d{1,5})\D*$/i,
-        /^\D*1?\D*([2-9]\d\d)[ $\\\.-]*(\d{3})[ $\\\.-]*(\d{4})[ $\\\.\*-]*(\d{1,5})\D*$/i,
-        /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*$/,
-        /^(\D*)(\d{3})\D*(\d{4})\D*$/,
-        /^\D*([2-9]11)\D*$/,
-        /^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D.*/  # Last ditch, just find a number
-        ]
-    end
-
-    ##
     # Valid area codes per nanpa.com
     module AreaCodes
-      data_path = Gem::datadir('dialable')
+      data_path = Gem.datadir('dialable')
       data_path ||= File.join(File.dirname(__FILE__), '..', 'data', 'dialable')
       puts data_path
-      NANP = YAML.load_file(File.join(data_path, "nanpa.yaml"))
+      NANP = YAML.load_file(File.join(data_path, 'nanpa.yaml'))
     end
 
-    attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones, :raw_timezone
+    attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones, :raw_timezone, :service_codes, :patterns
 
-    def initialize(parts={})
-      self.areacode  = parts[:areacode]  ? parts[:areacode]  : nil
-      self.prefix    = parts[:prefix]    ? parts[:prefix]    : nil
-      self.line      = parts[:line]      ? parts[:line]      : nil
-      self.extension = parts[:extension] ? parts[:extension] : nil
+    def initialize(parts = {}, options = {})
+      self.areacode  = parts.fetch(:areacode)
+      self.prefix    = parts.fetch(:prefix)
+      self.line      = parts.fetch(:line)
+      self.extension = parts.fetch(:extension)
+      self.service_codes = options.fetch(:service_codes) { Dialable::ServiceCodes::NANP }
+      self.patterns      = options.fetch(:patterns)      { Dialable::Patterns::NANP }
     end
 
     def areacode=(raw_code)
-      code = raw_code.to_i
-      if AreaCodes::NANP[code]
-        @areacode = raw_code
-        self.location = AreaCodes::NANP[code][:location] if AreaCodes::NANP[code][:location]
-        self.country = AreaCodes::NANP[code][:country] if AreaCodes::NANP[code][:country]
-        self.raw_timezone = AreaCodes::NANP[code][:timezone] if AreaCodes::NANP[code][:timezone]
+      code = AreaCodes::NANP.fetch(raw_code.to_i) {
+        fail InvalidNANPError, "#{code} is not a valid NANP Area Code."
+      }
 
-        if AreaCodes::NANP[code][:timezone]
-          self.timezones = []
-          self.relative_timezones = []
-          tz = AreaCodes::NANP[code][:timezone]
-          now = Time.now
-          local_utc_offset = now.utc_offset/3600
+      @areacode = raw_code
+      @location = code.fetch(:location) { nil }
+      @country = code.fetch(:country) { nil }
+      @raw_timezone = code.fetch(:timezone) { nil }
+      @timezones = []
+      @relative_timezones = []
 
-          if tz =~ /UTC(-\d+)/
-            self.timezones << tz
-            utc_offset = $1.to_i
-            self.relative_timezones << (utc_offset) - local_utc_offset
-          else
-            tz.split(//).each do |zone|  # http://www.timeanddate.com/library/abbreviations/timezones/na/
-              zone = "HA" if zone == "H"
-              zone = "AK" if zone == "K"
-              tz = zone + (now.dst? ? "D" : "S") + "T"  # This is cludgey
-              self.timezones << tz
-              delta = nil
-              if Time.zone_offset(tz)
-                delta = Time.zone_offset(tz)/3600 - local_utc_offset
-              else
-                case zone
-                when /N[SD]T/
-                  delta = -3.5 - local_utc_offset
-                when /A[SD]T/
-                  delta = -4 - local_utc_offset
-                when /A?K[SD]T/
-                  delta = -9 - local_utc_offset
-                when /HA?[SD]T/
-                  delta = -10 - local_utc_offset
-                end
-                delta = delta - 1 if delta and now.dst?
-              end
-              # puts "#{delta} // #{Time.zone_offset(tz)} // #{tz} // #{local_utc_offset}"
-              self.relative_timezones << delta if delta
-            end
+      return unless @raw_timezone
+
+      now = Time.now
+      local_utc_offset = now.utc_offset / 3600
+
+      if @raw_timezone =~ /UTC(-\d+)/
+        utc_offset = Regexp.last_match(1).to_i
+        @timezones << raw_timezone
+        @relative_timezones << (utc_offset) - local_utc_offset
+        return
+      end
+
+      # http://www.timeanddate.com/library/abbreviations/timezones/na/
+      @raw_timezone.split(//).each do |zone|
+        zone = 'HA' if zone == 'H'
+        zone = 'AK' if zone == 'K'
+        tz = zone + (now.dst? ? 'D' : 'S') + 'T'  # This is cludgey
+        @timezones << tz
+
+        delta = nil
+        if Time.zone_offset(tz)
+          delta = (Time.zone_offset(tz) / 3600) - local_utc_offset
+        else
+          case zone
+          when /N[SD]T/
+            delta = -3.5 - local_utc_offset
+          when /A[SD]T/
+            delta = -4 - local_utc_offset
+          when /A?K[SD]T/
+            delta = -9 - local_utc_offset
+          when /HA?[SD]T/
+            delta = -10 - local_utc_offset
           end
+
+          delta -= 1 if delta && now.dst?
         end
-      else
-        raise InvalidNANPError, "#{code} is not a valid NANP Area Code."
+
+        @relative_timezones << delta if delta
       end
     end
 
@@ -119,24 +90,27 @@ module Dialable
       @timezones = [tz] if tz
     end
 
-    # def relative_timezones
-    #   rt = []
-    #   @timezones.each do |tz|
-    #     rt <<
-    #   end
-    #   rt
-    # end
+    def relative_timezone
+      @relative_timezones.first if @relative_timezones
+    end
 
     def self.parse(number)
-      Patterns::VALID.each do |pattern|
-        return Dialable::NANP.new(:areacode => $1, :prefix => $2, :line => $3, :extension => $4) if number =~ pattern
+      Dialable::Patterns::NANP.each do |pattern|
+        if number =~ pattern
+          return Dialable::NANP.new(
+            :areacode => Regexp.last_match(1),
+            :prefix => Regexp.last_match(2),
+            :line => Regexp.last_match(3),
+            :extension => Regexp.last_match(4)
+          )
+        end
       end
 
-      raise InvalidNANPError, "Not a valid NANP Phone Number."
+      fail InvalidNANPError, "Not a valid NANP Phone Number."
     end
 
     def erc?
-      return ServiceCodes::ERC[@areacode].nil?
+      @service_codes.has_key?(:@areacode)
     end
 
     def to_s
@@ -160,7 +134,7 @@ module Dialable
     end
 
     def to_hash
-      return {
+      {
         :areacode => @areacode,
         :prefix => @prefix,
         :line => @line,

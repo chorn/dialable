@@ -1,15 +1,10 @@
 language: ruby
 cache: bundler
-script: "bundle exec rspec"
+script: bundle exec rspec
 rvm:
-  - 2.1.2
-  - 2.1.0
-  - 2.0.0
-  - 1.9.3
-  - jruby-1.7.11
-notifications:
-  irc:
-    channels:
-      - "chat.freenode.net#chorn"
-    on_success: change
-    on_failure: always
+- 2.2.2
+- 2.1.6
+- 2.0.0
+- 1.9.3
+dd:
+  secure: fzItORKaVrevTjQQu85FYgqgSVkRGG8PtOfNTCYY0meyP1+hF/lH6i5ZAb35VAuwi9InqaYnPx09dREBlfEqkzY/Ypxglq+EosAfqOgiKFu44JlM4vhxSdwn2mywCJpYZ0IbH5OnkF6rUULL/AoRQPlIV77eRqhB9LGfLNlYMfU=
