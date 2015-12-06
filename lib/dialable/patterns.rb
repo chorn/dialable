@@ -8,7 +8,7 @@ module Dialable
       Regexp.new('^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D*$'),
       Regexp.new('^(\D*)(\d{3})\D*(\d{4})\D*$'),
       Regexp.new('^\D*([2-9]11)\D*$'),
-      Regexp.new('^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D.*')  # Last ditch, just find a number
+      Regexp.new('^\D*1?\D*([2-9]\d\d)\D*(\d{3})\D*(\d{4})\D.*') # Last ditch, just find a number
     ]
 
   end

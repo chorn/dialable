@@ -1,25 +1,17 @@
 require 'dialable/version'
-require 'yaml'
-require 'tzinfo'
 require 'rubygems'
+require 'tzinfo'
+require 'dialable/area_codes'
 require 'dialable/service_codes'
 require 'dialable/patterns'
 require 'dialable/parsers'
 
 module Dialable
   class NANP
-    class InvalidNANPError < StandardError
-    end
+    class InvalidNANPError < StandardError; end
 
-    # Valid area codes per nanpa.com
-    module AreaCodes
-      data_path = Gem.datadir('dialable')
-      data_path ||= File.join(File.dirname(__FILE__), '..', 'data', 'dialable')
-      NANP = YAML.load_file(File.join(data_path, 'nanpa.yaml'))
-    end
-
-    attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones, :raw_timezone
-    attr_reader :service_codes, :patterns
+    attr_accessor :areacode, :prefix, :line, :extension, :location, :country, :timezones, :relative_timezones
+    attr_reader :service_codes, :pattern
 
     def self.parse(string, parser = Dialable::Parsers::NANP)
       parsed = parser.call(string)
@@ -41,72 +33,16 @@ module Dialable
     end
 
     def areacode=(raw_code)
-      code = AreaCodes::NANP.fetch(raw_code.to_i) {
-        fail InvalidNANPError, "#{code} is not a valid NANP Area Code."
-      }
-
+      code = AreaCodes::NANP.fetch(raw_code.to_i) { fail InvalidNANPError, "#{code} is not a valid NANP Area Code." }
       @areacode = raw_code
       @location = code.fetch(:location) { nil }
       @country = code.fetch(:country) { nil }
-      @raw_timezone = code.fetch(:timezone) { nil }
-      @timezones = []
-      @relative_timezones = []
-
-      return unless @raw_timezone
-
-      now = Time.now
-      local_utc_offset = now.utc_offset / 3600
-
-      if @raw_timezone =~ /UTC(-\d+)/
-        utc_offset = Regexp.last_match(1).to_i
-        @timezones << raw_timezone
-        @relative_timezones << (utc_offset) - local_utc_offset
-        return
-      end
-
-      # http://www.timeanddate.com/library/abbreviations/timezones/na/
-      @raw_timezone.split(//).each do |zone|
-        zone = 'HA' if zone == 'H'
-        zone = 'AK' if zone == 'K'
-        tz = zone + (now.dst? ? 'D' : 'S') + 'T'  # This is cludgey
-        @timezones << tz
-
-        delta = nil
-        if Time.zone_offset(tz)
-          delta = (Time.zone_offset(tz) / 3600) - local_utc_offset
-        else
-          case zone
-          when /N[SD]T/
-            delta = -3.5 - local_utc_offset
-          when /A[SD]T/
-            delta = -4 - local_utc_offset
-          when /A?K[SD]T/
-            delta = -9 - local_utc_offset
-          when /HA?[SD]T/
-            delta = -10 - local_utc_offset
-          end
-
-          delta -= 1 if delta && now.dst?
-        end
-
-        @relative_timezones << delta if delta
-      end
-    end
-
-    def timezone
-      @timezones.first if @timezones
-    end
-
-    def timezone=(tz)
-      @timezones = [tz] if tz
-    end
-
-    def relative_timezone
-      @relative_timezones.first if @relative_timezones
+      @timezones = code.fetch(:timezones) { [] }
+      @relative_timezones = @timezones.map { |timezone| timezone_offset(timezone) }
     end
 
     def erc?
-      @service_codes.has_key?(@areacode)
+      @service_codes.key?(@areacode)
     end
 
     def to_s
@@ -136,6 +72,28 @@ module Dialable
         :line => @line,
         :extension => @extension
       }
+    end
+
+    def timezone
+      @timezones.first if @timezones
+    end
+
+    def timezone=(tz)
+      @timezones = [tz] if tz
+    end
+
+    def raw_timezone
+      @raw_timezones.first if @raw_timezones
+    end
+
+    def relative_timezone
+      @relative_timezones.first if @relative_timezones
+    end
+
+    private
+
+    def timezone_offset(raw)
+      TZInfo::Timezone.get(raw).offsets_up_to(0).first.utc_total_offset / 3600
     end
   end
 end

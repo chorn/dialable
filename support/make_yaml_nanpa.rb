@@ -12,15 +12,122 @@ curl = `curl -sL http://nanpa.com/nanp1/npa_report.csv`
 
 CSV.parse(curl, :headers => headers) do |row|
   next unless row.fetch(:npa) =~ /\A\d+\Z/ && row.fetch(:in_service).to_s =~ /y/i
+  npa = row[:npa].to_i
+  country = row.fetch(:country)
+  location = row.fetch(:location) { 'US' }
+  location = 'US' if location =~ /NANP Area/i || location =~ /\A#{country}\Z/i
 
-  country  = row.fetch(:country) { '' }
+  raw_timezones = row.fetch(:time_zone) { '' }.to_s.gsub(/[\(\)]/, '')
+  timezones = []
+  if raw_timezones =~ /UTC([\+\-]\d+)/
+    timezones << case Regexp.last_match(1).to_i
+                 when 10
+                   'Pacific/Guam'
+                 when -10
+                   'US/Hawaii'
+                 when -9
+                   'US/Alaska'
+                 end
+  elsif country && country.upcase == "CANADA"
+    if raw_timezones.split(//).any?
+      timezones << raw_timezones.split(//).collect do |timezone|
+        case timezone
+        when 'E'
+          "Canada/Eastern"
+        when 'C'
+          "Canada/Central"
+        when 'M'
+          "Canada/Mountain"
+        when 'P'
+          "Canada/Pacific"
+        when 'N'
+          "Canada/Newfoundland"
+        when 'A'
+          "Canada/Atlantic"
+        else
+          'America/None'
+        end
+      end
+    else
+      timezones << case location
+                   when 'ONTARIO'
+                     "Canada/Eastern"
+                   when 'MANITOBA'
+                     "Canada/Central"
+                   when 'QUEBEC'
+                     "Canada/Eastern"
+                   else
+                     'America/None'
+                   end
+    end
+  elsif country && country.upcase == "US"
+    timezones << raw_timezones.split(//).collect do |timezone|
+      case timezone
+      when 'E'
+        "US/Eastern"
+      when 'C'
+        "US/Central"
+      when 'M'
+        "US/Mountain"
+      when 'P'
+        "US/Pacific"
+      else
+        case location
+        when 'USVI'
+          "America/Virgin"
+        when 'PUERTO RICO'
+          "America/Puerto_Rico"
+        when 'AS'
+          nil
+        else
+          'America/None'
+        end
+      end
+    end
+  elsif country
+    timezones << case country.upcase
+                 when "BAHAMAS"
+                   "America/Virgin"
+                 when "BARBADOS"
+                   "America/Barbados"
+                 when "ANGUILLA"
+                   "America/Anguilla"
+                 when "ANTIGUA/BARBUDA"
+                   "America/Antigua"
+                 when "BERMUDA"
+                   "Atlantic/Bermuda"
+                 when "BRITISH VIRGIN ISLANDS"
+                   "America/Virgin"
+                 when "CAYMAN ISLANDS"
+                   "America/Cayman"
+                 when "GRENADA"
+                   "America/Grenada"
+                 when "TURKS & CAICOS ISLANDS"
+                   "America/Virgin"
+                 when "MONTSERRAT"
+                   "America/Montserrat"
+                 when "SINT MAARTEN"
+                   "America/Virgin"
+                 when "ST. LUCIA"
+                   "America/St_Lucia"
+                 when "DOMINICA"
+                   "America/Dominica"
+                 when "ST. VINCENT & GRENADINES"
+                   "America/Virgin"
+                 when "DOMINICAN REPUBLIC"
+                   "America/Virgin"
+                 when "TRINIDAD AND TOBAGO"
+                   "America/Virgin"
+                 when "ST. KITTS AND NEVIS"
+                   "America/Virgin"
+                 when "JAMAICA"
+                   "America/Jamaica"
+                 end
+  end
 
-  timezone = row.fetch(:time_zone) { '' }.to_s.gsub(/[\(\)]/, '')
-
-  location = row.fetch(:location) { '' }
-  location = '' if location =~ /NANP Area/i || location =~ /\A#{country}\Z/i
-
-  nanpa[row[:npa].to_i] = { :country => country, :timezone => timezone, :location => location }
+  nanpa[npa] = { :country => country }
+  nanpa[npa][:timezones] = timezones.flatten.compact if timezones && timezones.flatten.compact.size > 0
+  nanpa[npa][:location] = location if location
 end
 
 puts nanpa.to_yaml

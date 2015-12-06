@@ -13,8 +13,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'http://github.com/chorn/dialable'
   spec.licenses      = ['MIT', 'LGPL-2']
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
+  spec.executables   = spec.files.grep(%r{!^bin/}).map { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
