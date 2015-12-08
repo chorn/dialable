@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     dialable (1.0.0)
-      tzinfo
+      tzinfo (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
