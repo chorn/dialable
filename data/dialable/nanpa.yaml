@@ -1,1404 +1,1917 @@
 ---
-:created: 2013-11-12 18:44:40.100823000 -05:00
+:created: 2015-12-06 18:13:18.620438000 -05:00
 201:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NJ
 202:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: DC
 203:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: CT
 204:
   :country: CANADA
-  :timezone: C
-  :location: Manitoba
+  :timezones:
+  - Canada/Central
+  :location: MANITOBA
 205:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: AL
 206:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: WA
 207:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: ME
 208:
   :country: US
-  :timezone: MP
+  :timezones:
+  - US/Mountain
+  - US/Pacific
   :location: ID
 209:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 210:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 212:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 213:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 214:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 215:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
 216:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
 217:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 218:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MN
 219:
   :country: US
-  :timezone: EC
+  :timezones:
+  - US/Eastern
+  - US/Central
   :location: IN
+220:
+  :country: US
+  :timezones:
+  - US/Eastern
+  :location: OH
 224:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 225:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: LA
 226:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 228:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MS
 229:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: GA
 231:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
 234:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
+236:
+  :country: CANADA
+  :timezones:
+  - Canada/Pacific
+  :location: BRITISH COLUMBIA
 239:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 240:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MD
 242:
   :country: BAHAMAS
-  :timezone: E
+  :timezones:
+  - America/Virgin
+  :location: US
 246:
   :country: BARBADOS
-  :timezone: A
+  :timezones:
+  - America/Barbados
+  :location: US
 248:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
 249:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 250:
   :country: CANADA
-  :timezone: P
-  :location: British Columbia
+  :timezones:
+  - Canada/Pacific
+  :location: BRITISH COLUMBIA
 251:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: AL
 252:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NC
 253:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: WA
 254:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 256:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: AL
 260:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: IN
 262:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: WI
 264:
   :country: ANGUILLA
-  :timezone: A
+  :timezones:
+  - America/Anguilla
+  :location: US
 267:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
 268:
   :country: ANTIGUA/BARBUDA
-  :timezone: A
+  :timezones:
+  - America/Antigua
+  :location: US
 269:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
 270:
   :country: US
-  :timezone: EC
+  :timezones:
+  - US/Eastern
+  - US/Central
   :location: KY
+272:
+  :country: US
+  :timezones:
+  - US/Eastern
+  :location: PA
 276:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: VA
 281:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 284:
   :country: BRITISH VIRGIN ISLANDS
-  :timezone: A
+  :timezones:
+  - America/Virgin
+  :location: US
 289:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 301:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MD
 302:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: DE
 303:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: CO
 304:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: WV
 305:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 306:
   :country: CANADA
-  :timezone: C
-  :location: Saskatchewan
+  :timezones:
+  - Canada/Central
+  :location: SASKATCHEWAN
 307:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: WY
 308:
   :country: US
-  :timezone: CM
+  :timezones:
+  - US/Central
+  - US/Mountain
   :location: NE
 309:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 310:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 312:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 313:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
 314:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MO
 315:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 316:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: KS
 317:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: IN
 318:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: LA
 319:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IA
 320:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MN
 321:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 323:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 325:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 330:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
 331:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 334:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: AL
 336:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NC
 337:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: LA
 339:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MA
 340:
   :country: US
-  :timezone: A
+  :timezones:
+  - America/Virgin
   :location: USVI
 343:
   :country: CANADA
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 345:
   :country: CAYMAN ISLANDS
-  :timezone: E
+  :timezones:
+  - America/Cayman
+  :location: US
+346:
+  :country: US
+  :timezones:
+  - US/Central
+  :location: TX
 347:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 351:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MA
 352:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 360:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: WA
 361:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
+364:
+  :country: US
+  :timezones:
+  - US/Eastern
+  - US/Central
+  :location: KY
 365:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 385:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: UT
 386:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 401:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: RI
 402:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: NE
 403:
   :country: CANADA
-  :timezone: M
-  :location: Alberta
+  :timezones:
+  - Canada/Mountain
+  :location: ALBERTA
 404:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: GA
 405:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: OK
 406:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: MT
 407:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 408:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 409:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 410:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MD
 412:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
 413:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MA
 414:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: WI
 415:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 416:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 417:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MO
 418:
   :country: CANADA
-  :timezone: E
-  :location: Quebec
+  :timezones:
+  - Canada/Eastern
+  :location: QUEBEC
 419:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
 423:
   :country: US
-  :timezone: EC
+  :timezones:
+  - US/Eastern
+  - US/Central
   :location: TN
 424:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 425:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: WA
 430:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 431:
   :country: CANADA
-  :location: Manitoba
+  :timezones:
+  - Canada/Central
+  :location: MANITOBA
 432:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 434:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: VA
 435:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: UT
 437:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 438:
   :country: CANADA
-  :timezone: E
-  :location: Quebec
+  :timezones:
+  - Canada/Eastern
+  :location: QUEBEC
 440:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
 441:
   :country: BERMUDA
-  :timezone: A
+  :timezones:
+  - Atlantic/Bermuda
+  :location: US
 442:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 443:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MD
 450:
   :country: CANADA
-  :timezone: E
-  :location: Quebec
-456: {}
+  :timezones:
+  - Canada/Eastern
+  :location: QUEBEC
+456:
+  :country: 
+  :location: US
 458:
   :country: US
-  :timezone: MP
+  :timezones:
+  - US/Mountain
+  - US/Pacific
   :location: OR
 469:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 470:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: GA
 473:
   :country: GRENADA
-  :timezone: A
+  :timezones:
+  - America/Grenada
+  :location: US
 475:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: CT
 478:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: GA
 479:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: AR
 480:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: AZ
 484:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
-500: {}
+500:
+  :country: 
+  :location: US
 501:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: AR
 502:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: KY
 503:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: OR
 504:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: LA
 505:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: NM
 506:
   :country: CANADA
-  :timezone: A
-  :location: New Brunswick
+  :timezones:
+  - Canada/Atlantic
+  :location: NEW BRUNSWICK
 507:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MN
 508:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MA
 509:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: WA
 510:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 512:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 513:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
 514:
   :country: CANADA
-  :timezone: E
-  :location: Quebec
+  :timezones:
+  - Canada/Eastern
+  :location: QUEBEC
 515:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IA
 516:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 517:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
 518:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 519:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 520:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: AZ
 530:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
-533: {}
+531:
+  :country: US
+  :timezones:
+  - US/Central
+  :location: NE
+533:
+  :country: 
+  :location: US
 534:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: WI
 539:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: OK
 540:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: VA
 541:
   :country: US
-  :timezone: MP
+  :timezones:
+  - US/Mountain
+  - US/Pacific
   :location: OR
-544: {}
+544:
+  :country: 
+  :location: US
 551:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NJ
 559:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 561:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 562:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 563:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IA
-566: {}
+566:
+  :country: 
+  :location: US
 567:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
 570:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
 571:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: VA
 573:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MO
 574:
   :country: US
-  :timezone: EC
+  :timezones:
+  - US/Eastern
+  - US/Central
   :location: IN
 575:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: NM
+577:
+  :country: 
+  :location: US
 579:
   :country: CANADA
-  :timezone: E
-  :location: Quebec
+  :timezones:
+  - Canada/Eastern
+  :location: QUEBEC
 580:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: OK
 581:
   :country: CANADA
-  :location: Quebec
+  :timezones:
+  - Canada/Eastern
+  :location: QUEBEC
 585:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 586:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
 587:
   :country: CANADA
-  :timezone: M
-  :location: Alberta
+  :timezones:
+  - Canada/Mountain
+  :location: ALBERTA
+588:
+  :country: 
+  :location: US
 600:
   :country: CANADA
+  :timezones:
+  - Canada/Eastern
+  :location: US
 601:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MS
 602:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: AZ
 603:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NH
 604:
   :country: CANADA
-  :timezone: P
-  :location: British Columbia
+  :timezones:
+  - Canada/Pacific
+  :location: BRITISH COLUMBIA
 605:
   :country: US
-  :timezone: CM
+  :timezones:
+  - US/Central
+  - US/Mountain
   :location: SD
 606:
   :country: US
-  :timezone: EC
+  :timezones:
+  - US/Eastern
+  - US/Central
   :location: KY
 607:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 608:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: WI
 609:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NJ
 610:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
 612:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MN
 613:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 614:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
 615:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TN
 616:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
 617:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MA
 618:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 619:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 620:
   :country: US
-  :timezone: CM
+  :timezones:
+  - US/Central
+  - US/Mountain
   :location: KS
+622:
+  :country: CANADA
+  :timezones:
+  - Canada/Eastern
+  :location: US
 623:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: AZ
 626:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
+628:
+  :country: US
+  :timezones:
+  - US/Pacific
+  :location: CA
+629:
+  :country: US
+  :timezones:
+  - US/Central
+  :location: TN
 630:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 631:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 636:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MO
+639:
+  :country: CANADA
+  :timezones:
+  - Canada/Central
+  :location: SASKATCHEWAN
 641:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IA
 646:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 647:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 649:
   :country: TURKS & CAICOS ISLANDS
-  :timezone: E
+  :timezones:
+  - America/Virgin
+  :location: US
 650:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 651:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MN
 657:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 660:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MO
 661:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 662:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MS
 664:
   :country: MONTSERRAT
-  :timezone: A
+  :timezones:
+  - America/Montserrat
+  :location: US
 667:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MD
 669:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 670:
   :country: US
-  :timezone: (UTC+10)
+  :timezones:
+  - Pacific/Guam
   :location: CNMI
 671:
   :country: US
-  :timezone: (UTC+10)
+  :timezones:
+  - Pacific/Guam
   :location: GU
 678:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: GA
 681:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: WV
 682:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 684:
   :country: US
   :location: AS
-700: {}
+700:
+  :country: 
+  :location: US
 701:
   :country: US
-  :timezone: CM
+  :timezones:
+  - US/Central
+  - US/Mountain
   :location: ND
 702:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: NV
 703:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: VA
 704:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NC
 705:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 706:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: GA
 707:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 708:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 709:
   :country: CANADA
-  :timezone: NA
-  :location: Newfoundland
+  :timezones:
+  - Canada/Newfoundland
+  - Canada/Atlantic
+  :location: NEWFOUNDLAND
 710:
   :country: US
+  :timezones:
+  - US/Eastern
 712:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IA
 713:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 714:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 715:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: WI
 716:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 717:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
 718:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 719:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: CO
 720:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: CO
 721:
   :country: SINT MAARTEN
-  :timezone: A
+  :timezones:
+  - America/Virgin
+  :location: US
 724:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
+725:
+  :country: US
+  :timezones:
+  - US/Pacific
+  :location: NV
 727:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 731:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TN
 732:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NJ
 734:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
+737:
+  :country: US
+  :timezones:
+  - US/Central
+  :location: TX
 740:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
 747:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 754:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 757:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: VA
 758:
   :country: ST. LUCIA
-  :timezone: A
+  :timezones:
+  - America/St_Lucia
+  :location: US
 760:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 762:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: GA
 763:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MN
 765:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: IN
 767:
   :country: DOMINICA
-  :timezone: A
+  :timezones:
+  - America/Dominica
+  :location: US
 769:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MS
 770:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: GA
 772:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 773:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 774:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MA
 775:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: NV
 778:
   :country: CANADA
-  :timezone: P
-  :location: British Columbia
+  :timezones:
+  - Canada/Pacific
+  :location: BRITISH COLUMBIA
 779:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 780:
   :country: CANADA
-  :timezone: M
-  :location: Alberta
+  :timezones:
+  - Canada/Mountain
+  :location: ALBERTA
 781:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MA
+782:
+  :country: CANADA
+  :timezones:
+  - Canada/Atlantic
+  :location: NOVA SCOTIA - PRINCE EDWARD ISLAND
 784:
   :country: ST. VINCENT & GRENADINES
-  :timezone: A
+  :timezones:
+  - America/Virgin
+  :location: US
 785:
   :country: US
-  :timezone: CM
+  :timezones:
+  - US/Central
+  - US/Mountain
   :location: KS
 786:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 787:
   :country: US
-  :timezone: A
-  :location: Puerto Rico
-800: {}
+  :timezones:
+  - America/Puerto_Rico
+  :location: PUERTO RICO
+800:
+  :country: 
+  :location: US
 801:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: UT
 802:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: VT
 803:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: SC
 804:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: VA
 805:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 806:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 807:
   :country: CANADA
-  :timezone: EC
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  - Canada/Central
+  :location: ONTARIO
 808:
   :country: US
-  :timezone: (UTC-10)
+  :timezones:
+  - US/Hawaii
   :location: HI
 809:
-  :country: Dominican Republic
-  :timezone: E
+  :country: DOMINICAN REPUBLIC
+  :timezones:
+  - America/Virgin
+  :location: US
 810:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
 812:
   :country: US
-  :timezone: EC
+  :timezones:
+  - US/Eastern
+  - US/Central
   :location: IN
 813:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 814:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
 815:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 816:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MO
 817:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 818:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 819:
   :country: CANADA
-  :timezone: E
-  :location: Quebec
+  :timezones:
+  - Canada/Eastern
+  :location: QUEBEC
 828:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NC
 829:
-  :country: Dominican Republic
-  :timezone: E
+  :country: DOMINICAN REPUBLIC
+  :timezones:
+  - America/Virgin
+  :location: US
 830:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 831:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 832:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 843:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: SC
+844:
+  :country: 
+  :location: US
 845:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 847:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 848:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NJ
 849:
-  :country: Dominican Republic
-  :timezone: E
+  :country: DOMINICAN REPUBLIC
+  :timezones:
+  - America/Virgin
+  :location: US
 850:
   :country: US
-  :timezone: EC
+  :timezones:
+  - US/Eastern
+  - US/Central
   :location: FL
-855: {}
+854:
+  :country: US
+  :timezones:
+  - US/Eastern
+  :location: SC
+855:
+  :country: 
+  :location: US
 856:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NJ
 857:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MA
 858:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 859:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: KY
 860:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: CT
 862:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NJ
 863:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 864:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: SC
 865:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: TN
-866: {}
+866:
+  :country: 
+  :location: US
 867:
   :country: CANADA
-  :timezone: CMP
-  :location: Yukon, NW Terr., Nunavut
+  :timezones:
+  - Canada/Central
+  - Canada/Mountain
+  - Canada/Pacific
+  :location: YUKON-NW TERR. - NUNAVUT
 868:
   :country: TRINIDAD AND TOBAGO
-  :timezone: A
-  :location: Trinidad & Tobago
+  :timezones:
+  - America/Virgin
+  :location: TRINIDAD & TOBAGO
 869:
   :country: ST. KITTS AND NEVIS
-  :timezone: A
-  :location: St. Kitts & Nevis
+  :timezones:
+  - America/Virgin
+  :location: ST. KITTS & NEVIS
 870:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: AR
 872:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: IL
 873:
   :country: CANADA
-  :timezone: E
-  :location: Quebec
+  :timezones:
+  - Canada/Eastern
+  :location: QUEBEC
 876:
   :country: JAMAICA
-  :timezone: E
-877: {}
+  :timezones:
+  - America/Jamaica
+  :location: US
+877:
+  :country: 
+  :location: US
 878:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: PA
-888: {}
-900: {}
+888:
+  :country: 
+  :location: US
+900:
+  :country: 
+  :location: US
 901:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TN
 902:
   :country: CANADA
-  :timezone: A
-  :location: Nova Scotia, Prince Edward Island
+  :timezones:
+  - Canada/Atlantic
+  :location: NOVA SCOTIA - PRINCE EDWARD ISLAND
 903:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 904:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 905:
   :country: CANADA
-  :timezone: E
-  :location: Ontario
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 906:
   :country: US
-  :timezone: EC
+  :timezones:
+  - US/Eastern
+  - US/Central
   :location: MI
 907:
   :country: US
-  :timezone: (UTC-9)
+  :timezones:
+  - US/Alaska
   :location: AK
 908:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NJ
 909:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 910:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NC
 912:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: GA
 913:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: KS
 914:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 915:
   :country: US
-  :timezone: CM
+  :timezones:
+  - US/Central
+  - US/Mountain
   :location: TX
 916:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 917:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
 918:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: OK
 919:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NC
 920:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: WI
 925:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 928:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: AZ
 929:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NY
+930:
+  :country: US
+  :timezones:
+  - US/Eastern
+  :location: IN
 931:
   :country: US
-  :timezone: EC
+  :timezones:
+  - US/Eastern
+  - US/Central
   :location: TN
 936:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 937:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: OH
 938:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: AL
 939:
   :country: US
-  :timezone: A
-  :location: Puerto Rico
+  :timezones:
+  - America/Puerto_Rico
+  :location: PUERTO RICO
 940:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 941:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 947:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
 949:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 951:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: CA
 952:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: MN
 954:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: FL
 956:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
+959:
+  :country: US
+  :timezones:
+  - US/Eastern
+  :location: CT
 970:
   :country: US
-  :timezone: M
+  :timezones:
+  - US/Mountain
   :location: CO
 971:
   :country: US
-  :timezone: P
+  :timezones:
+  - US/Pacific
   :location: OR
 972:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 973:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NJ
 978:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MA
 979:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: TX
 980:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NC
 984:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: NC
 985:
   :country: US
-  :timezone: C
+  :timezones:
+  - US/Central
   :location: LA
 989:
   :country: US
-  :timezone: E
+  :timezones:
+  - US/Eastern
   :location: MI
