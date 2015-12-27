@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dialable (1.0.1)
+    dialable (1.0.2)
       tzinfo (~> 1.0)
 
 GEM
