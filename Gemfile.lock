@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dialable (1.0.0)
+    dialable (1.0.1)
       tzinfo (~> 1.0)
 
 GEM
@@ -87,6 +87,7 @@ DEPENDENCIES
   guard-rspec (~> 4.5)
   rake (~> 10.4)
   rspec (~> 3.3)
+  tzinfo (~> 1.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
