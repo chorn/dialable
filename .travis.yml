@@ -1,5 +1,4 @@
 language: ruby
-cache: bundler
 script: bundle exec rspec
 before_install:
 - gem update bundler
@@ -14,9 +13,7 @@ env:
 - ISOLATED=true
 - ISOLATED=false
 git:
-  depth: 3
+  depth: 2
   submodules: false
-deploy:
-  skip_cleanup: true
 dd:
   secure: fzItORKaVrevTjQQu85FYgqgSVkRGG8PtOfNTCYY0meyP1+hF/lH6i5ZAb35VAuwi9InqaYnPx09dREBlfEqkzY/Ypxglq+EosAfqOgiKFu44JlM4vhxSdwn2mywCJpYZ0IbH5OnkF6rUULL/AoRQPlIV77eRqhB9LGfLNlYMfU=
