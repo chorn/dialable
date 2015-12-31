@@ -1,22 +1,20 @@
 language: ruby
-cache: bundler
 script: bundle exec rspec
 before_install:
 - gem update bundler
 rvm:
 - 2.3.0
-- 2.2.3
+- 2.2.4
 - 2.2.0
-- 2.1.7
+- 2.1.8
+- 2.1.0
 - 2.0.0
 - 1.9.3
 env:
 - ISOLATED=true
 - ISOLATED=false
 git:
-  depth: 3
+  depth: 2
   submodules: false
-deploy:
-  skip_cleanup: true
 dd:
   secure: fzItORKaVrevTjQQu85FYgqgSVkRGG8PtOfNTCYY0meyP1+hF/lH6i5ZAb35VAuwi9InqaYnPx09dREBlfEqkzY/Ypxglq+EosAfqOgiKFu44JlM4vhxSdwn2mywCJpYZ0IbH5OnkF6rUULL/AoRQPlIV77eRqhB9LGfLNlYMfU=
