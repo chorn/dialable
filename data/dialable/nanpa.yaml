@@ -1,5 +1,5 @@
 ---
-:created: 2015-12-06 18:13:18.620438000 -05:00
+:created: 2016-07-12 11:56:18.356306000 -07:00
 201:
   :country: US
   :timezones:
@@ -455,6 +455,11 @@
   :timezones:
   - Canada/Eastern
   :location: ONTARIO
+380:
+  :country: US
+  :timezones:
+  - US/Eastern
+  :location: OH
 385:
   :country: US
   :timezones:
@@ -815,6 +820,11 @@
 544:
   :country: 
   :location: US
+548:
+  :country: CANADA
+  :timezones:
+  - Canada/Eastern
+  :location: ONTARIO
 551:
   :country: US
   :timezones:
@@ -914,7 +924,6 @@
   :country: CANADA
   :timezones:
   - Canada/Eastern
-  :location: US
 601:
   :country: US
   :timezones:
@@ -1295,6 +1304,11 @@
   :timezones:
   - US/Eastern
   :location: OH
+743:
+  :country: US
+  :timezones:
+  - US/Eastern
+  :location: NC
 747:
   :country: US
   :timezones:
@@ -1511,6 +1525,11 @@
   :timezones:
   - Canada/Eastern
   :location: QUEBEC
+825:
+  :country: CANADA
+  :timezones:
+  - Canada/Mountain
+  :location: ALBERTA
 828:
   :country: US
   :timezones:
