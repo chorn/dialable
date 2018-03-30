@@ -8,7 +8,7 @@ module Dialable
       datadir = if File.identical?(ENV['PWD'], File.join(File.dirname(__FILE__), '..', '..'))
                   File.join(File.dirname(__FILE__), '..', '..', 'data', 'dialable')
                 else
-                  Gem.datadir('dialable')
+                  Gem::Specification.find_by_name('dialable').datadir
                 end
 
       if ! File.directory?(datadir)
